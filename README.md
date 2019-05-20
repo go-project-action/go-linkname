@@ -1,6 +1,12 @@
 ## Go LinkName
 
-## 學習知識點
+## 測試
+
+```
+go run cmd/main.go
+```
+
+## 学习知识点
 
 ### 1. 使用 `//go:linkname` 開頭不能有空白
 
@@ -13,7 +19,7 @@
 main.main: relocation target github.com/go-project-action/go-linkname/src/b.Hi not defined
 ```
 
-### 2. 沒有實現的包要加一個 .s 彙編檔案繞過檢查
+### 2. 没有实现的包要加一个 `.s` 汇编档案绕过检查
 
 試試看把 `b.s` 刪掉
 
@@ -22,7 +28,7 @@ main.main: relocation target github.com/go-project-action/go-linkname/src/b.Hi n
 src/b/b.go:7:6: missing function body
 ```
 
-### 3. 使用 //go:linkname 的包要加上 `_ "unsafe"`
+### 3. 使用 `//go:linkname` 的包要加上 `_ "unsafe"`
 
 把 `unsafe` 拿到會報錯
 
